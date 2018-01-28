@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cookieTest" />
+        <module name="eclient8081" />
+        <module name="eclient8082" />
+        <module name="eserver" />
+        <module name="timer" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cookieTest" target="1.8" />
+      <module name="eclient8081" target="1.8" />
+      <module name="eclient8082" target="1.8" />
+      <module name="eserver" target="1.8" />
+      <module name="timer" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
