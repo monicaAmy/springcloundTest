@@ -34,6 +34,7 @@ public class PageholdertestApplicationTests
 
   @Autowired
   private GoodsMapper goodsMapper;
+
   private MockMvc mockMvc; // 模拟MVC对象，通过MockMvcBuilders.webAppContextSetup(this.wac).build()初始化。
   @Autowired
   private WebApplicationContext wac; // 注入WebApplicationContext

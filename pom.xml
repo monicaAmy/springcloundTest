@@ -16,6 +16,12 @@
     <module>eclient8081</module>
     <module>eserver</module>
     <module>timer</module>
+    <module>common</module>
+    <module>configserver</module>
+    <module>ribbontest</module>
+    <module>feigntest</module>
+    <module>zuultest</module>
+    <module>configserver</module>
   </modules>
 
   <properties>
@@ -44,6 +50,7 @@
       <artifactId>spring-boot-starter</artifactId>
     </dependency>
 
+    <!--web 会引入slf4j-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -62,6 +69,56 @@
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-context</artifactId>
+    </dependency>
+
+    <!--ribbon-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-ribbon</artifactId>
+      <version>1.4.5.RELEASE</version>
+    </dependency>
+
+    <!--feign-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-feign</artifactId>
+      <version>1.4.5.RELEASE</version>
+    </dependency>
+
+    <!--断路器-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-hystrix</artifactId>
+      <version>1.4.5.RELEASE</version>
+
+    </dependency>
+
+    <!--断路器仪表盘-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-actuator</artifactId>
+      <version>2.0.3.RELEASE</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+      <version>1.4.5.RELEASE</version>
+
+    </dependency>
+
+    <!--zuul-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-zuul</artifactId>
+      <version>1.4.5.RELEASE</version>
+    </dependency>
+
+    <!--config 配置中心-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-config-server</artifactId>
     </dependency>
 
     <dependency>
@@ -109,6 +166,13 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
+
+    <!--分布式配置中心-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-config-server</artifactId>
+    </dependency>
+
   </dependencies>
 
   <dependencyManagement>
