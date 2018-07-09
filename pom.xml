@@ -22,6 +22,7 @@
     <module>feigntest</module>
     <module>zuultest</module>
     <module>configserver</module>
+    <module>configclient</module>
   </modules>
 
   <properties>
@@ -116,9 +117,16 @@
     </dependency>
 
     <!--config 配置中心-->
+    <!--config server-->
     <dependency>
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-config-server</artifactId>
+    </dependency>
+
+    <!--config client-->
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-config</artifactId>
     </dependency>
 
     <dependency>
