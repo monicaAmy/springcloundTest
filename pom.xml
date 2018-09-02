@@ -23,6 +23,7 @@
     <module>zuultest</module>
     <module>configserver</module>
     <module>configclient</module>
+    <module>redistest</module>
   </modules>
 
   <properties>
@@ -45,6 +46,19 @@
   </parent>
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+      <version>1.2.49</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.2</version>
+    </dependency>
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -162,7 +176,6 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
-      <!--<scope>test</scope>-->
     </dependency>
 
     <dependency>

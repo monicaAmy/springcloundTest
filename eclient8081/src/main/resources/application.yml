@@ -6,7 +6,6 @@ eureka:
     fetch-registry: false
 server:
   port: 8081
-  context-path: /wo
 spring:
   application:
     name: service-hi1
