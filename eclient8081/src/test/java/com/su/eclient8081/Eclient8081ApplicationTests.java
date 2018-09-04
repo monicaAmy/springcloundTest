@@ -3,6 +3,7 @@ package com.su.eclient8081;
 import com.alibaba.fastjson.JSON;
 import com.su.eclient8081.Eclient8081Application.SubThread;
 import com.su.eclient8081.bean.User;
+import com.su.eclient8081.controller.dto.ParamRequest;
 import com.su.eclient8081.controller.dto.Person;
 import com.su.eclient8081.controller.dto.UserRequest;
 import com.su.eclient8081.dao.UserMapper;
@@ -85,5 +86,65 @@ public class Eclient8081ApplicationTests
         .andReturn();// 返回执行请求的结果
 
     System.out.println(result.getResponse().getContentAsString());
+  }
+
+  @Test
+  public void testQ31() throws Exception
+  {
+    ParamRequest paramRequest = new ParamRequest();
+    paramRequest.setId("11");
+    paramRequest.setName("222");
+    String s = paramRequest.toString();
+    System.out.println("发出请求的字符串:" + s);
+    MvcResult result = mockMvc.perform(
+        MockMvcRequestBuilders.post("/param/getparam")
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .content(paramRequest.toString()).param("query1", "1"))
+        .andExpect(MockMvcResultMatchers.status().isOk())// 模拟向testRest发送get请求
+        .andExpect(MockMvcResultMatchers.content()
+            .contentType(MediaType.APPLICATION_JSON_UTF8))// 预期返回值的媒体类型text/plain;charset=UTF-8
+        .andReturn();// 返回执行请求的结果
+
+    System.out.println(result.getResponse().getContentAsString());
+  }
+
+  @Test
+  public void testQ32() throws Exception
+  {
+
+    MvcResult result = mockMvc.perform(
+        MockMvcRequestBuilders.get("/param/getparam")
+            .param("id", "11").param("name", "222").param("query1", "1"))
+        .andExpect(MockMvcResultMatchers.status().isOk())// 模拟向testRest发送get请求
+        .andExpect(MockMvcResultMatchers.content()
+            .contentType(MediaType.APPLICATION_JSON_UTF8))// 预期返回值的媒体类型text/plain;charset=UTF-8
+        .andReturn();// 返回执行请求的结果
+
+    System.out.println(result.getResponse().getContentAsString());
+  }
+
+  @Test
+  public void testQ33() throws Exception
+  {
+
+    MvcResult result = mockMvc.perform(
+        MockMvcRequestBuilders.get("/param/getAndpostParam")
+            .param("id", "11").param("name", "222").param("query1", "1"))
+        .andExpect(MockMvcResultMatchers.status().isOk())// 模拟向testRest发送get请求
+        .andExpect(MockMvcResultMatchers.content()
+            .contentType(MediaType.APPLICATION_JSON_UTF8))// 预期返回值的媒体类型text/plain;charset=UTF-8
+        .andReturn();// 返回执行请求的结果
+
+    System.out.println(result.getResponse().getContentAsString());
+
+    MvcResult result1 = mockMvc.perform(
+        MockMvcRequestBuilders.get("/param/getAndpostParam")
+            .param("id", "11").param("name", "222").param("query1", "1"))
+        .andExpect(MockMvcResultMatchers.status().isOk())// 模拟向testRest发送get请求
+        .andExpect(MockMvcResultMatchers.content()
+            .contentType(MediaType.APPLICATION_JSON_UTF8))// 预期返回值的媒体类型text/plain;charset=UTF-8
+        .andReturn();// 返回执行请求的结果
+
+    System.out.println(result1.getResponse().getContentAsString());
   }
 }
