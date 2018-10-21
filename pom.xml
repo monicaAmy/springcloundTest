@@ -24,6 +24,8 @@
     <module>configserver</module>
     <module>configclient</module>
     <module>redistest</module>
+    <module>quartztest</module>
+    <module>quartztest_simple</module>
   </modules>
 
   <properties>

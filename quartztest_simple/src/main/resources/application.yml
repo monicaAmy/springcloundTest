@@ -1,0 +1,46 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8089
+spring:
+  application:
+    name: service-hi2
+  quartz:
+  #下面的properties一直没有生效 ???
+  properties:
+    org:
+      quartz:
+        scheduler:
+          instanceName: clusteredScheduler
+          instanceId: AUTO
+        jobStore:
+          class: org.quartz.impl.jdbcjobstore.JobStoreTX
+          driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+          tablePrefix: QRTZ_
+          useProperties: false
+          isClustered: true
+          clusterCheckinInterval: 20000
+          dataSource: myDs
+        threadPool:
+          class: org.quartz.simpl.SimpleThreadPool
+          threadCount: 10
+          threadPriority: 5
+          threadsInheritContextClassLoaderOfInitializingThread: true
+        dataSource:
+          myDs:
+            driver: com.mysql.jdbc.Driver
+            URL: jdbc:mysql://localhost:3306/test1
+            username: root
+            password: root
+            #connectionProvider.class: com.su.DruidConnectionProvider
+  jdbc-store-type: jdbc
+  dataSource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+
+
+debug: true
