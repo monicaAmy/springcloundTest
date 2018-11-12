@@ -17,7 +17,6 @@
     <module>eserver</module>
     <module>timer</module>
     <module>common</module>
-    <module>configserver</module>
     <module>ribbontest</module>
     <module>feigntest</module>
     <module>zuultest</module>
@@ -225,6 +224,7 @@
         </configuration>
       </plugin>
     </plugins>
+
   </build>
 
   <repositories>
