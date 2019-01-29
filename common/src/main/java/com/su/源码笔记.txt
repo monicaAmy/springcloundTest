@@ -1,0 +1,9 @@
+代理源码:
+看源码方法主要看哪行代码返回bean
+org.springframework.context.support.AbstractApplicationContext
+  > org.springframework.beans.factory.support.AbstractBeanFactory doGetBean()
+    >
+
+java 动态代理为什么是实现接口
+因为动态代理生成代理类的时候 加上了继承 proxy 类, Java不能多继承
+
